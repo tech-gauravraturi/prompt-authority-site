@@ -22,25 +22,25 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [focusedField, setFocusedField] = useState<string | null>(null)
-  
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
+
     // Simulate submission
     await new Promise(resolve => setTimeout(resolve, 2000))
-    
+
     setIsSubmitting(false)
     setIsSubmitted(true)
   }
-  
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value,
     }))
   }
-  
+
   if (isSubmitted) {
     return (
       <div className="relative pt-24 pb-16 min-h-screen flex items-center justify-center px-4">
@@ -63,7 +63,7 @@ export default function ContactPage() {
       </div>
     )
   }
-  
+
   return (
     <div className="relative pt-24 pb-16">
       {/* Hero */}
@@ -80,7 +80,7 @@ export default function ContactPage() {
           </p>
         </div>
       </section>
-      
+
       {/* Form Section */}
       <section className="px-4 py-8">
         <div className="max-w-4xl mx-auto">
@@ -89,7 +89,7 @@ export default function ContactPage() {
             <div className="lg:col-span-2">
               <div className="glass-card p-6 sticky top-24">
                 <h3 className="text-xl font-semibold text-[#F0F0F0] mb-6">Direct Channels</h3>
-                
+
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-lg bg-[#008080]/20 flex items-center justify-center flex-shrink-0">
@@ -101,7 +101,7 @@ export default function ContactPage() {
                       <p className="text-[#A0A0A0] text-sm">Distributed Operations Worldwide</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-lg bg-[#008080]/20 flex items-center justify-center flex-shrink-0">
                       <Mail className="w-5 h-5 text-[#008080]" />
@@ -111,7 +111,7 @@ export default function ContactPage() {
                       <p className="text-[#F0F0F0]">architects@promptauthority.ai</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-lg bg-[#008080]/20 flex items-center justify-center flex-shrink-0">
                       <Phone className="w-5 h-5 text-[#008080]" />
@@ -123,7 +123,7 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Status indicator */}
                 <div className="mt-8 p-4 rounded-lg bg-[#008080]/10 border border-[#008080]/30">
                   <div className="flex items-center gap-3">
@@ -134,12 +134,11 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
-            
+
             {/* Form */}
             <div className="lg:col-span-3">
-              <form onSubmit={handleSubmit} className="glass-card p-6 md:p-8 border-[#008080]/30">
+                <form onSubmit={handleSubmit} className="glass-card p-6 md:p-8 border-[#008080]/30">
                 <div className="space-y-6">
-                  {/* Name */}
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-[#F0F0F0] mb-2">
                       Full Name <span className="text-[#008080]">*</span>
@@ -162,7 +161,6 @@ export default function ContactPage() {
                     />
                   </div>
                   
-                  {/* Agency */}
                   <div>
                     <label htmlFor="agency" className="block text-sm font-medium text-[#F0F0F0] mb-2">
                       Organization / Agency
@@ -184,7 +182,6 @@ export default function ContactPage() {
                     />
                   </div>
                   
-                  {/* Email */}
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-[#F0F0F0] mb-2">
                       Email Address <span className="text-[#008080]">*</span>
@@ -207,7 +204,6 @@ export default function ContactPage() {
                     />
                   </div>
                   
-                  {/* Project Scope */}
                   <div>
                     <label htmlFor="scope" className="block text-sm font-medium text-[#F0F0F0] mb-2">
                       Project Scope <span className="text-[#008080]">*</span>
@@ -234,7 +230,6 @@ export default function ContactPage() {
                     </select>
                   </div>
                   
-                  {/* Message */}
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-[#F0F0F0] mb-2">
                       Project Details
@@ -256,7 +251,7 @@ export default function ContactPage() {
                     />
                   </div>
                   
-                  {/* Submit */}
+                   
                   <button
                     type="submit"
                     disabled={isSubmitting}

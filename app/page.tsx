@@ -2,6 +2,12 @@
 
 import Link from 'next/link'
 import { ArrowRight, Cpu, Zap, Brain, Shield } from 'lucide-react'
+import dynamic from 'next/dynamic';
+
+const BookingChat = dynamic<Record<string, never>>(
+  () => import('@/components/BookingChat'),
+  { ssr: false }
+);
 
 const features = [
   {
@@ -44,19 +50,19 @@ export default function HomePage() {
             <span className="w-2 h-2 rounded-full bg-[#008080] animate-pulse" />
             <span className="text-[#008080] text-sm font-medium">Autonomous Systems Active</span>
           </div>
-          
+
           {/* Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-balance">
             <span className="text-[#F0F0F0]">We Don&apos;t Just Prompt.</span>
             <br />
             <span className="gradient-text">We Replicate Human Intelligence.</span>
           </h1>
-          
+
           {/* Subheadline */}
           <p className="text-lg sm:text-xl text-[#A0A0A0] max-w-3xl mx-auto mb-10 leading-relaxed text-pretty">
             The Prompt Authority: Architects of the Autonomous Agency. We build AI systems that think, decide, and execute — transforming your operations into self-governing ecosystems.
           </p>
-          
+
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
@@ -74,7 +80,7 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-        
+
         {/* Scroll indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
           <span className="text-[#A0A0A0] text-sm">Scroll to explore</span>
@@ -83,7 +89,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      
+
       {/* Flywheel Section */}
       <section className="relative py-24 px-4">
         <div className="max-w-6xl mx-auto">
@@ -95,7 +101,7 @@ export default function HomePage() {
               Our integrated methodology creates a self-reinforcing cycle of intelligence amplification.
             </p>
           </div>
-          
+
           {/* Features Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => (
@@ -114,7 +120,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      
+
       {/* Stats Section */}
       <section className="relative py-20 px-4">
         <div className="max-w-5xl mx-auto">
@@ -134,7 +140,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      
+
       {/* CTA Section */}
       <section className="relative py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
@@ -152,6 +158,11 @@ export default function HomePage() {
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
+      </section>
+      <section style={{ maxWidth: '800px', margin: '0 auto', padding: '40px 20px' }}>
+        <h1>Book a Meeting</h1>
+        <p>Chat with our assistant below to schedule a call with our team.</p>
+        <BookingChat />
       </section>
     </div>
   )
