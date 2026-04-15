@@ -15,67 +15,76 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   {
-    id: 'arch-001',
-    name: 'Marcus Chen',
-    role: 'Visionary',
-    specialty: 'Agency Architect',
-    experience: '12 years in autonomous systems',
-    aetherSignature: 'AE-7X9K-ALPHA',
+    id: 'founder-001',
+    name: 'Himanshu Bhatt',
+    role: 'Founder & Automation Architect',
+    specialty: 'Founder, Strategy Lead & AI Automation Architect',
+    experience: 'Expert in autonomous systems and AI strategy',
+    aetherSignature: 'AE-HB01-ALPHA',
     level: 'visionary',
   },
   {
+    id: 'eng-001',
+    name: 'Shradheya Gairola',
+    role: 'AI Automation Engineer',
+    specialty: 'Workflow Automation Specialist',
+    experience: 'Specialized in AI-driven workflow optimization',
+    aetherSignature: 'AE-SG02-GAMMA',
+    level: 'senior',
+  },
+  {
+    id: 'eng-002',
+    name: 'Mohit',
+    role: 'AI Systems & Integration Engineer',
+    specialty: 'AI Applications & Backend Engineer',
+    experience: 'Focused on AI backend systems and integrations',
+    aetherSignature: 'AE-MO03-DELTA',
+    level: 'senior',
+  },
+  {
     id: 'dev-001',
-    name: 'Sarah Okonkwo',
-    role: 'Senior Developer',
-    specialty: 'WebGL/3D Integration Lead',
-    experience: '8 years in immersive tech',
-    aetherSignature: 'AE-3M2P-GAMMA',
+    name: 'Aman Bisht',
+    role: 'Frontend & Internal Tools Developer',
+    specialty: 'Dashboard & Client Tools Developer',
+    experience: 'Expert in frontend development and internal tooling',
+    aetherSignature: 'AE-AB04-SIGMA',
     level: 'senior',
-  },
-  {
-    id: 'dev-002',
-    name: 'Raj Patel',
-    role: 'Senior Developer',
-    specialty: 'AI Pipeline Architect',
-    experience: '9 years in ML systems',
-    aetherSignature: 'AE-5K7R-DELTA',
-    level: 'senior',
-  },
-  {
-    id: 'dev-003',
-    name: 'Elena Voroshilova',
-    role: 'Senior Developer',
-    specialty: 'Neural Network Specialist',
-    experience: '7 years in deep learning',
-    aetherSignature: 'AE-8N4T-SIGMA',
-    level: 'senior',
-  },
-  {
-    id: 'strat-001',
-    name: 'James Morrison',
-    role: 'Media Strategist',
-    specialty: 'Vibe Coding Pioneer',
-    experience: '6 years in AI-assisted design',
-    aetherSignature: 'AE-2V9X-OMEGA',
-    level: 'specialist',
-  },
-  {
-    id: 'strat-002',
-    name: 'Yuki Tanaka',
-    role: 'Media Strategist',
-    specialty: 'Experience Architect',
-    experience: '5 years in UX innovation',
-    aetherSignature: 'AE-6L3M-THETA',
-    level: 'specialist',
   },
   {
     id: 'analyst-001',
-    name: 'Dr. Amara Williams',
-    role: 'AI Analyst',
-    specialty: 'Neural Pattern Mapper',
-    experience: '10 years in cognitive modeling',
-    aetherSignature: 'AE-1P8Q-PRIME',
+    name: 'Gaurav Raturi',
+    role: 'Workflow Analyst',
+    specialty: 'Business Process & Automation Consultant',
+    experience: 'Skilled in business process analysis and automation',
+    aetherSignature: 'AE-GR05-THETA',
     level: 'analyst',
+  },
+  {
+    id: 'pm-001',
+    name: 'Rishabh Purohit',
+    role: 'Client Success & Project Manager',
+    specialty: 'Client Delivery & Retainer Manager',
+    experience: 'Dedicated to client success and project management',
+    aetherSignature: 'AE-RP06-OMEGA',
+    level: 'specialist',
+  },
+  {
+    id: 'growth-001',
+    name: 'Tarun Rawat',
+    role: 'Growth & Authority Lead',
+    specialty: 'Marketing, Content & Brand Strategy',
+    experience: 'Leader in marketing and brand strategy',
+    aetherSignature: 'AE-TR07-PRIME',
+    level: 'specialist',
+  },
+  {
+    id: 'revenue-001',
+    name: 'Shubham Nautiyal',
+    role: 'Revenue & Partnerships Lead',
+    specialty: 'Sales, Deals & Strategic Growth',
+    experience: 'Expert in sales and strategic partnerships',
+    aetherSignature: 'AE-SN08-NOVA',
+    level: 'specialist',
   },
 ]
 
@@ -99,7 +108,7 @@ function MemberCard({ member, onClick }: { member: TeamMember; onClick: () => vo
   return (
     <button
       onClick={onClick}
-      className={`glass-card p-6 text-left transition-all duration-300 hover:-translate-y-2 hover:border-[#FFBF00]/50 group w-full`}
+      className={`glass-card p-6 text-left transition-all duration-300 hover:-translate-y-2 hover:border-[#FFBF00]/50 hover:shadow-xl hover:shadow-[#008080]/30 group w-full`}
     >
       {/* Avatar */}
       <div 
@@ -213,7 +222,7 @@ export default function TaskforcePage() {
       <section className="px-4 py-16">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#008080]/10 border border-[#008080]/30 mb-6">
-            <span className="text-[#008080] text-sm font-medium">The Elite 7</span>
+            <span className="text-[#008080] text-sm font-medium">The Taskforce</span>
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-[#F0F0F0]">
             The <span className="text-[#008080]">Taskforce</span>
@@ -232,7 +241,7 @@ export default function TaskforcePage() {
               {[
                 { label: 'Visionary', count: 1, color: levelColors.visionary },
                 { label: 'Senior Developers', count: 3, color: levelColors.senior },
-                { label: 'Media Strategists', count: 2, color: levelColors.specialist },
+                { label: 'Strategists', count: 3, color: levelColors.specialist },
                 { label: 'AI Analyst', count: 1, color: levelColors.analyst },
               ].map((item) => (
                 <div key={item.label} className={`p-4 rounded-lg ${item.color.bg} ${item.color.border} border text-center`}>
@@ -248,7 +257,7 @@ export default function TaskforcePage() {
       {/* Command Grid */}
       <section className="px-4 py-8">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {teamMembers.map((member) => (
               <MemberCard
                 key={member.id}
