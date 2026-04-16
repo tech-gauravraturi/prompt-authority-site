@@ -97,7 +97,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-[#A0A0A0] text-sm mb-1">Headquarters</p>
-                      <p className="text-[#F0F0F0]">San Francisco, CA</p>
+                      <p className="text-[#F0F0F0]">Srinagar Garhwal UK (India)</p>
                       <p className="text-[#A0A0A0] text-sm">Distributed Operations Worldwide</p>
                     </div>
                   </div>
@@ -108,7 +108,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-[#A0A0A0] text-sm mb-1">Email</p>
-                      <p className="text-[#F0F0F0]">architects@promptauthority.ai</p>
+                      <p className="text-[#F0F0F0]">promptauthority.dev@gmail.com</p>
                     </div>
                   </div>
 

@@ -120,9 +120,9 @@
   }
   
   .glass-header {
-    background: rgba(5, 5, 5, 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(0, 128, 128, 0.2);
   }
   
@@ -131,6 +131,13 @@
     box-shadow: 0 0 20px rgba(0, 128, 128, 0.4),
                 0 0 40px rgba(0, 128, 128, 0.2),
                 0 0 60px rgba(0, 128, 128, 0.1);
+  }
+  
+  .glow-neon-teal {
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.8),
+                0 0 30px rgba(0, 242, 255, 0.6),
+                0 0 45px rgba(0, 242, 255, 0.4),
+                0 0 60px rgba(0, 242, 255, 0.2);
   }
   
   .glow-amber {

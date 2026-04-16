@@ -41,9 +41,9 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <div className="w-10 h-10 rounded-lg bg-[#008080]/20 border border-[#008080]/50 flex items-center justify-center group-hover:glow-teal transition-all duration-300">
-              <span className="text-[#008080] font-bold text-xl">P</span>
+              <span className={`font-bold text-xl ${isScrolled ? 'text-white' : 'text-[#008080]'}`}>P</span>
             </div>
-            <span className="text-[#F0F0F0] font-semibold text-lg tracking-wide hidden sm:block">
+            <span className={`font-semibold text-lg tracking-wide hidden sm:block ${isScrolled ? 'text-white' : 'text-[#F0F0F0]'}`}>
               Prompt <span className="text-[#008080]">Authority</span>
             </span>
           </Link>
@@ -57,7 +57,7 @@ export default function Header() {
                   className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg ${
                     pathname === item.href
                       ? 'text-[#008080]'
-                      : 'text-[#A0A0A0] hover:text-[#F0F0F0]'
+                      : `${isScrolled ? 'text-white hover:text-white' : 'text-[#A0A0A0] hover:text-[#F0F0F0]'}`
                   }`}
                 >
                   {item.label}
@@ -72,7 +72,7 @@ export default function Header() {
           {/* CTA Button */}
           <Link
             href="/contact"
-            className="hidden md:block px-5 py-2.5 bg-[#008080] text-[#F0F0F0] text-sm font-medium rounded-lg hover:bg-[#008080]/80 transition-all duration-300 hover:glow-teal"
+            className={`hidden md:block px-5 py-2.5 bg-[#008080] text-sm font-medium rounded-lg hover:bg-[#008080]/80 transition-all duration-300 hover:glow-teal ${isScrolled ? 'text-white' : 'text-[#F0F0F0]'}`}
           >
             Request an Architect
           </Link>
@@ -80,10 +80,22 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-[#F0F0F0] hover:text-[#008080] transition-colors"
+            className="md:hidden p-3 bg-[#2a2a2a]/80 border-2 border-solid border-[#2a2a2a] rounded-lg hover:bg-[#2a2a2a]/90 hover:border-[#00F2FF]/50 transition-all duration-300 hover:glow-neon-teal"
             aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? (
+              <X 
+                size={20} 
+                className="text-[#00F2FF] drop-shadow-[0_0_8px_rgba(0,242,255,0.8)]" 
+                style={{ strokeWidth: '3px' }}
+              />
+            ) : (
+              <Menu 
+                size={20} 
+                className="text-[#00F2FF] drop-shadow-[0_0_8px_rgba(0,242,255,0.8)]" 
+                style={{ strokeWidth: '3px' }}
+              />
+            )}
           </button>
         </div>
         
