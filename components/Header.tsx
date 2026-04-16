@@ -101,7 +101,7 @@ export default function Header() {
         
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-[#008080]/20">
+          <div className="md:hidden mt-4 pb-4 border-t border-[#008080]/20 bg-black/95 rounded-lg">
             <ul className="flex flex-col gap-2 mt-4">
               {navItems.map((item) => (
                 <li key={item.href}>
@@ -110,7 +110,7 @@ export default function Header() {
                     className={`block px-4 py-3 rounded-lg transition-all duration-300 ${
                       pathname === item.href
                         ? 'bg-[#008080]/20 text-[#008080] border-l-2 border-[#008080]'
-                        : 'text-[#A0A0A0] hover:text-[#F0F0F0] hover:bg-white/5'
+                        : 'text-white hover:text-white hover:bg-white/5'
                     }`}
                   >
                     {item.label}
@@ -120,7 +120,7 @@ export default function Header() {
               <li className="mt-2">
                 <Link
                   href="/contact"
-                  className="block px-4 py-3 bg-[#008080] text-[#F0F0F0] text-center rounded-lg font-medium"
+                  className="block px-4 py-3 bg-[#008080] text-white text-center rounded-lg font-medium"
                 >
                   Request an Architect
                 </Link>
