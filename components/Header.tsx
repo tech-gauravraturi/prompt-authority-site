@@ -101,7 +101,10 @@ export default function Header() {
         
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-[#008080]/20 bg-black/95 rounded-lg">
+          <div 
+            className="md:hidden mt-4 pb-4 border-t border-[#008080]/20 bg-[#050505] rounded-lg z-[60]"
+            style={{ backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)' }}
+          >
             <ul className="flex flex-col gap-2 mt-4">
               {navItems.map((item) => (
                 <li key={item.href}>
@@ -109,7 +112,7 @@ export default function Header() {
                     href={item.href}
                     className={`block px-4 py-3 rounded-lg transition-all duration-300 ${
                       pathname === item.href
-                        ? 'bg-[#008080]/20 text-[#008080] border-l-2 border-[#008080]'
+                        ? 'bg-[#008080]/20 text-white border-l-2 border-[#008080]'
                         : 'text-white hover:text-white hover:bg-white/5'
                     }`}
                   >
